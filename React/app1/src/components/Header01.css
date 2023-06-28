@@ -1,0 +1,14 @@
+body,
+#a{
+    height: 100px ;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+
+}
+img{
+    float: left;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+}

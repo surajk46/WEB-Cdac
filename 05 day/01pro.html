@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array</title>
+    <script>
+        function mysort(a,b)
+        {
+            c=a-b;
+            return c;
+        }
+    </script>
+</head>
+<body>
+    <script>
+         var arr=[];
+            //creating array using prompt
+       /*  for(i=0;i<5;i++)
+        {
+            n=prompt("Enter Number:")
+            arr.push(n);
+        } */
+        arr=[3,5,7,11,17,2];
+            //display using for in loop
+        for(i in arr)
+        {
+            document.write(" "+arr[i]);
+        }
+        document.write("</br>");
+            //display using normal loop
+        for(i=0;i<arr.length;i++)
+        {
+            document.write(" "+arr[i]);
+        }
+        document.write("</br>");
+            //sort using named function
+        arr.sort(mysort);
+        document.write("Sorted Array Using Named Function:"+arr.toString());
+        document.write("</br>");
+            //sort using anonymous function
+        arr.sort(function(a,b){return a-b});
+        document.write("Sorted Array Using Anonymous Function:"+arr.toString());
+        document.write("</br>");
+            //sort using arrow function
+        arr.sort((a,b)=>a-b);
+        document.write("Sorted Array Using Arrow Function:"+arr.toString());
+        document.write("</br>");
+
+
+        document.write("<ol>");
+        arr.forEach(c=>document.write("<li>"+c+"</li>"));
+        document.write("</ol>");
+        document.write("<br/>"); 
+
+   /*      function di()
+        {
+            var an="";
+        an=an+"<ol>";
+        arr.forEach(function(value){an+="<li>"+value+"</li>"});
+        an=an+"</ol>";
+        alert(an);
+        document.write(an);
+        document.getElementById("res").innerHTML=an;
+        } */
+
+    //sum of arr
+    sum=arr.reduce((v,add)=>v+add);
+    document.write("<p> Sum = "+sum+"</p>");
+
+    //min of arr
+    min=arr.reduce(function (a,b){
+        if(a<b)
+            return a;
+        else
+            return b;
+
+    });
+    document.write("<p> Min = "+min+"</p>");
+     
+    //max of arr
+    max=arr.reduce(function (a,b){
+        if(a>b)
+            return a;
+        else
+            return b;
+    });
+    document.write("<p> Max = "+max+"</p>");
+
+    //is all are even
+    even=arr.every(v=>v%2==0)
+    document.write("<p> all are even = "+even);
+
+    //is all are add
+    odd=arr.every(v=>v%2==1)
+    document.write("<p> all are odd = "+odd);
+
+
+    function prime(n)
+    {
+        for(i=2;i<n;i++)
+        {
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    } 
+    // is all are prime
+    prime=arr.every(v=>prime(v));
+    document.write("<p> all are prime = "+prime);
+
+    //make new arr of even no
+    document.write("<br/>odd numbers are : ");
+    e=arr.filter(v=>v%2==0);
+    document.write(e.toString())
+   
+    // make new arr of odd elements
+    document.write("<br/>odd numbers are : ");
+    o=arr.filter(v=>v%2==1);
+    document.write(o.toString());
+
+    
+    </script>
+</body>
+</html>

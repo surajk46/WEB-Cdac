@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=`[{"empid":101,"name":"Deepak","sal":25000,"deptno":10,"manager":true,"contactno":1236547890},
+        {"empid":102,"name":"Deepa","sal":25000,"deptno":10,"manager":true,"contactno":1236547890},
+        {"empid":104,"name":"Deepika","sal":25000,"deptno":10,"manager":true,"contactno":1236547890}]`;
+        
+        function json()
+        {
+                alert()
+                var obj=JSON.parse(a);
+                var k="";
+                
+                alert(obj.length)
+                for(i=0;i<obj.length;i++)
+                {
+                    k+="<p>"+obj[i].empid+"<p>"
+                    k+="<p>"+obj[i].name+"<p>"
+                    k+="<p>"+obj[i].sal+"<p>"
+                    k+="<p>"+obj[i].manager+"<p>"
+                }
+                var aa="<h1>"+a+"</h1>"
+                alert(k)
+                document.getElementById("res").innerHTML=k;
+        }
+       
+
+       
+    </script>
+</head>
+<body>
+    <button onclick="json()">click</button>
+    <span id="res"></span>
+</body>
+</html>

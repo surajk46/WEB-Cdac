@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function makeRequset()
+        {
+            ajax = createAjaxObject();
+            if(ajax)
+                alert("ajax created");
+
+            var url="http://localhost:9000/getemps?deptno="+document.f1.deptno.value;    
+            alert(url);
+            ajax.open('GET',url,true);
+
+            ajax.send("");
+
+            ajax.onreadystatechange = updatePage;
+        }
+
+        function createAjaxObject()
+        {
+            try{
+                //use non-IE way
+                var ajax = new XMLHttpRequest();
+                return ajax;
+            }
+            catch(e)
+            {
+                try{
+                    //IE way
+                    var ajax = new ActiveXObject("Microsoft.XMLHTTP")
+                    return ajax;
+                }
+                catch(e)
+                {
+                    alert("ajax not supported");
+                }
+            }
+        }
+
+        function updatePage()
+        {
+            alert(ajax.readyState)
+            if(ajax.readyState == 4)
+                document.getElementById("emps").innerHTML=ajax.responseText;
+        }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        Enter deptno : 
+        <input type="number" name="deptno" />
+        <br/>
+        <input type="button" value="Get Emps" 
+          onclick="makeRequset()" />
+    </form> 
+    <div id="emps"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <style>
+        #mydiv{
+            width:100px;
+            height:300px;
+            border: 1px solid red;
+            border-radius:2px;
+            display:none;
+            background-color:gray
+        }
+    </style>
+    <script src="jquery-3.6.4.min.js" ></script>
+    <script src="jquery-ui.min.js" ></script>
+    <script>
+        $(document).ready(function(){ 
+            alert("doc ready");
+            $("div").mouseover(function() {
+                $(this).animate({width:'+=100px',height:'200px',fontSize:'30px',backgroundColor:'red'})
+                $(this).animate({width:'+=200px',height:'250px',fontSize:'36px',backgroundColor:'blue'})
+                $(this).animate({width:'-=200px',height:'200px',fontSize:'30px',backgroundColor:'green'})
+                $(this).animate({width:'-=100px',height:'150px',fontSize:'24px',backgroundColor:'yellow'})
+            })
+
+            $("div").mouseout(function(){
+                $(this).stop(); //stopping running animation
+            })
+
+            /*$("button").click(function(){
+                $("#mydiv").slideDown(5000);
+                $("#mydiv").slideUp(5000)
+            })
+
+            $("div").mouseover(function(){
+                //$(this).stop();
+                $(this).stop(true);
+            })
+            */
+        })
+    </script>
+</head>
+<body>
+       <div style="width:200px; height:150px;font-size: 24px;background-color: yellow;">
+            Hello world
+       </div>
+       <button> click to slide panel </button>
+       <div id="mydiv">
+            content of the div
+       </div>
+</body>
+</html>

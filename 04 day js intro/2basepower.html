@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pow(b,p)
+        {
+            ans=1;
+            for(i=1;i<=p;i++)
+                ans*=b;
+            document.getElementById("res").innerHTML=b+" raise to "+p+" = "+ans;
+        }
+    </script>
+    <style>
+        td{
+            background-image: linear-gradient(150deg,red,orange,white);
+            padding: 10px;
+        }
+        button{
+            background-color: rgb(73, 0, 243);
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+  <form>
+        <table>
+            <tr>
+                <td><label for="base">Enter base : </label></td>
+                <td><input type="number" name="base" id="base"></td>
+            </tr>
+            <tr>
+                <td><label for="power">Enter Power : </label></td>
+                <td><input type="number" name="power" id="power"></td>
+            </tr>
+            <tr>
+                <td  colspan="2" style="text-align: center;"><button type="button" onclick="pow(base.value,power.value)" >Submit</button></td>
+            </tr>
+        </table>
+        <div id="res">
+
+        </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        var str = "welcome";
+        document.write("<br/> length : " + str.length);
+        document.write("<br/> char at 4 : " + str.charAt(4));
+        document.write("<br/> ascii at 4 : " + str.charCodeAt(4));
+        document.write("<br/> upper : " + str.toUpperCase());
+        document.write("<br/> first e : " + str.indexOf("e"));
+        document.write("<br/> last e : " + str.lastIndexOf("e"));
+        var line = "welcome to web";
+        document.write("<br/> slice 3-10 : " + line.slice(3, 10));
+        document.write("<br/> slice -12 to -3 : " + line.slice(-12, -3));
+        document.write("<br/> substring : " + line.substring(3));
+        document.write("<br/> substr (4,8) : " + line.substr(4, 8));
+        document.write("<br/> split(' ') and join : " + line.split(" ").join());
+        document.write("<br/> split('') and join : " + line.split("").join());
+        function extract(mail)
+        {
+            var atposition = mail.indexOf("@");
+            var uname = mail.substring(0,atposition);
+            var domainname = mail.substring(atposition+1) 
+            alert(uname+" : "+domainname)
+            var dotindex = mail.lastIndexOf(".");
+            alert("suffix : "+mail.substring(dotindex+1))
+        }
+    
+    </script>
+</head>
+<body>
+    <form>
+        enter email : <input type="email" name="mailid" /> <br/>
+        <input type="button" value="EXTRACT" 
+        onclick="extract(mailid.value)" />
+    </form>
+</body>
+</html>
+

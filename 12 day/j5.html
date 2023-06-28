@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b").click(function(){
+                url="http://localhost:9000/formCheck";
+                var dno = $("#id").val();
+                $.post(url,{deptno:dno},function(data,status){
+                    var emps=JSON.parse(data);
+                    if(status=='success')
+                    {
+                        a="<table border=1>";
+                        for(i=0;i<emps.length;i++)
+                        {       
+                                a+="<tr><td>"+emps[i].ENAME+"</td>";
+                                a+="<td>"+emps[i].JOB+"</td>";
+                                a+="<td>"+emps[i].SAL+"</td>";
+                                a+="<td>"+emps[i].DEPTNO+"</td></tr>";
+                        }
+                        a+="</table>"
+                        alert(a);
+                        $("#acc").html(a);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <form action="">
+            Enter DeptNo :
+            <input type="number" name="id" id="id"/>
+            <br/>
+            <button id="b" type="button">Click</button>
+            <span id="acc"></span>
+        </form>
+    </div>
+</body>
+</html>

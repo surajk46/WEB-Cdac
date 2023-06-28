@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+             $("#greet").click(function(){
+                 var url = "http://localhost:9000/getname?empid="+$("#id").val();
+                 alert(url);
+                 $.get(url, function(data, status){
+                     if(status == "success")
+                        $("#msg").html(data); 
+                 })
+             })
+         })
+     </script> 
+</head>
+<body>
+    <form name="f1">
+        enter name:
+        <input type="number" name="id" id="id">
+        <br/>
+        <button type="button">ok</button>
+        <div id="msg">
+
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function addlink(){
+            var anode = document.createElement("a");
+            var txtnode = document.createTextNode("Click Me");
+            anode.appendChild(txtnode);
+            anode.setAttribute("href","#");
+            document.body.appendChild(anode);
+            //document.getElementById("b1").disabled = true;
+            var btnode = document.getElementById("b1");
+            document.body.removeChild(btnode);
+        }
+    </script>
+</head>
+<body>
+    <button id="b1" onclick="addlink()">Add Link</button>
+
+</body>
+</html>

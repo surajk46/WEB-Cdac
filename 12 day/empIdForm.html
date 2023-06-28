@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function makeRequest()
+        {
+            ajax=createAjaxObject();
+            if(ajax)
+            alert("created");
+            ajax.onreadystatechange = updatePage;
+            var url="http://localhost:9000/formCheck?empId="+document.getElementById("empId").value;
+            alert(url)
+            ajax.open('GET',url,true);
+
+            ajax.send("");
+            
+
+        }
+        function updatePage()
+        {
+            if(ajax.readyState==4)
+                document.getElementById("msg").innerHTML=ajax.responseText;
+        }
+        function createAjaxObject()
+        {
+            try
+            {
+                var ajax=new XMLHttpRequest();
+                return ajax;
+            }
+            catch(e)
+            {
+                try
+                {
+                    var ajax=new ActiveXObject("Microsoft.XMLHHTTP");
+                    return ajax;
+                }
+                catch(e)
+                {
+                    console.log("Ajax not created");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="f1">
+        Enter EmpId: 
+        <input type="number" name="empId" id="empId">
+        <br/>
+        <button onclick="makeRequest()" type="button">okk</button>
+        <div id="msg"></div>
+    </form>
+   
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calDay(value)
+        {
+            var bdate=new Date(value);
+            wdays=["Sunday","Monday","Tuesday","Wednesday","Thuresday","Friday","Saturday"];
+            document.getElementById("day").innerHTML=wdays[bdate.getDay()];
+        }
+        function calMonth(value)
+        {
+            var bdate=new Date(value);
+            wdays=["January","February","March","April","May","June","July","August","Septmber","Octomber","November","December"];
+            document.getElementById("month").innerHTML=wdays[bdate.getMonth()];
+        }
+        function calYear(value)
+        {
+            var bdate=new Date(value);
+            document.getElementById("year").innerHTML=bdate.getFullYear();
+        }
+        function calAge(value)
+        {
+            var bdate=new Date(value);
+            var cdate=new Date();
+            document.getElementById("age").innerHTML=cdate.getFullYear()-bdate.getFullYear();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><label for="bdate">Enter your Bdate : </label></td>
+                <td><input type="date" name="bdate" id="bdate"></td>
+            </tr>
+            <tr>
+                <td><button onclick="calDay(bdate.value)">cal day</button></td>
+                <td id="day"></td>
+            </tr>
+            <tr>
+                <td><button onclick="calMonth(bdate.value)">cal Month</button></td>
+                <td id="month"></td>
+            </tr>
+            <tr>
+                <td><button onclick="calYear(bdate.value)">cal Year</button></td>
+                <td id="year"></td>
+            </tr>
+            <tr>
+                <td><button onclick="calAge(bdate.value)">cal Age</button></td>
+                <td id="age"></td>
+            </tr>
+        </table>
+        
+        
+    </div>
+</body>
+</html>

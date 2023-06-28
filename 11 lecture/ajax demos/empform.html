@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        //1. catch the event
+        function makeRequset()
+        {
+            //2. create ajax object
+            ajax = createAjaxObject();
+
+            //5. check the readyState
+            ajax.onreadystatechange = updatePage;
+            /*if(ajax)
+                alert("ajax created")*/
+            //3. initialize request
+            var url = "http://localhost:9000/getname?empid="+document.f1.empid.value;
+            alert(url);
+            ajax.open('GET',url, true);
+            //4. req will be sent, 1 argument - compulsory
+            ajax.send("");
+
+            
+        }
+
+        function updatePage()
+        {
+            alert(ajax.readyState);
+            if(ajax.readyState == 4)
+            {
+                document.getElementById("msg").innerHTML = ajax.responseText;
+            }
+        }
+
+        function createAjaxObject()
+        {
+            //if(window.XMLHttpRequest)
+            try{
+                //use non-IE way
+                var ajax = new XMLHttpRequest();
+                return ajax;
+            }
+            catch(e)
+            {
+                try{
+                    //IE way
+                    var ajax = new ActiveXObject("Microsoft.XMLHTTP")
+                    return ajax;
+                }
+                catch(e)
+                {
+                    alert("ajax not supported");
+                }
+            }
+        }
+    </script>    
+</head>
+<body>
+    <form name="f1">
+        Enter empid : 
+        <input type="number" name="empid" />
+        <br/>
+        <input type="button" value="Greet" 
+          onclick="makeRequset()" />
+    </form> 
+    <div id="msg"></div>
+</body>
+</html>

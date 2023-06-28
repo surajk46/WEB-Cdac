@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dispTime()
+        {
+            var ddate=new Date();
+            hh=ddate.getHours();
+            mm=ddate.getMinutes();
+            ss=ddate.getSeconds();
+            str =hh+":"+mm+":"+ss;
+            document.getElementById("time").innerHTML=str;
+            flag=setTimeout(dispTime,1000);
+        }
+    </script>
+</head>
+<body onload="dispTime()">
+    <div>
+        <span id="time" style="float: right;"></span>
+        <br/>
+        <hr/>
+        <vr/>
+</body>
+</html>

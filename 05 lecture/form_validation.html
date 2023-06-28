@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function validate()
+        {
+            //read the value
+            //check for wrong values
+            //display msg and get value once again
+
+            //validation for uid
+            //var uid = document.getElementById("uid_id").value;
+            var uid = document.f1.uid.value;
+            //alert(uid)
+            //invalid length uid
+            if(uid.length < 8 || uid.length > 15)
+            {
+                //alert("uid should be 8 to 15 characters");
+                document.getElementById("uiderror").innerHTML = "uid should be 8 to 15 characters";
+                document.f1.uid.value = ""; //erases the value
+                document.f1.uid.focus();
+                return;
+            }
+            else
+            {
+                document.getElementById("uiderror").innerHTML = "";
+            }
+
+            //validation for pwd
+            var pwd = document.f1.pwd.value;
+            //alert(pwd);
+            //invalid length pwd
+            if(pwd.length < 8 || pwd.length > 12)
+            {
+                alert("pwd should be 8 to 12 characters");
+                document.f1.pwd.value = ""; //erases the value
+                document.f1.pwd.focus();
+                return;
+            }
+            var numflag = false;
+            var spflag = false;
+            var capflag = false;
+            for(i=0;i<pwd.length;i++)
+            {
+                var ascii = pwd.charCodeAt(i);
+                if(ascii >= 65 && ascii <= 90)
+                    capflag = true;
+                if(ascii >= 48 && ascii <= 57)
+                    numflag = true;
+                if(!((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57)) )
+                    spflag = true;    
+             
+            }
+            alert(numflag+" : "+capflag+" : "+spflag)
+            if(!numflag || !capflag || !spflag)
+            {
+                alert("Invalid pwd");
+                document.f1.pwd.value = ""; //erases the value
+                document.f1.pwd.focus();
+                return;
+            }
+
+            //validation for gender
+            //alert(document.f1.gender.value);
+            if(document.f1.gender.value == "")
+            {
+                alert("Please select gender");
+                return;
+            }
+
+            alert("valid data. submitting");
+            document.f1.submit();
+
+            //all values correct
+            //submit data
+        }
+
+        function validateuid(uid)
+        {
+            alert(uid.length)
+        }
+
+        function f_pwd()
+        {
+            //alert("hi")
+            console.log('hi')
+        }
+
+    </script>
+    
+</head>
+<body>
+    <form name="f1">
+        Enter uid : 
+        <input type="text" name="uid" id="uid_id" onblur="validateuid(uid.value)" />
+        <span id="uiderror" style="color:red"></span>
+        <br/>
+        Enter pwd : 
+        <input type="text" name="pwd"  onfocus="f_pwd()"/>
+        <span id="pwderror" style="color:red"></span>
+        <br/>
+        Select gender : 
+        <input type="radio" name="gender" value="M" /> Male
+        <input type="radio" name="gender" value="F" /> Female
+        <span id="gendererror" style="color:red"></span>
+        <br/>
+        <input type="button" value="Login" 
+           onclick="validate()"/>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        4. Display 3 buttons on the page having a label of colon Clicking of the button should charge the background color of the document. 
+    </title>
+    <script>
+      function changeColor(col){
+      document.body.style.backgroundColor=col.innerText
+}
+    </script>
+  </head>
+  <body>
+    <div class="but">
+      <button class="btn" id="1" onclick="changeColor(this)" >Red</button>
+      <button class="btn"id="2" onclick="changeColor(this)" >Pink</button>
+      <button class="btn" id="3" onclick="changeColor(this)" >Green</button>
+    </div>
+  </body>
+</html>

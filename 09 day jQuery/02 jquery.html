@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("img").mouseup(function(){
+                $("img").fadeIn();
+            });
+            $("img").mousedown(function(){
+                $("img").fadeOut();
+            });
+            $("#a").click(function(){
+                $("img").fadeOut();
+            });
+            $("#b").click(function(){
+                $("img").fadeIn();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+            </tr>
+            <tr>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+            </tr>
+            <tr>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+                <td><img src="wp2462431-pubg-4k-wallpapers.jpg" alt="img"></td>
+            </tr>
+        </table>
+        <button id="a">click</button>
+        <button id="b">click</button>
+    </div>
+</body>
+</html>

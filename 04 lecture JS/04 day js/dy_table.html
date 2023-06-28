@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function dispTable(num){
+            //alert(num);
+            var str="";
+            str+="<table border='1'>";
+            for(i=1;i<=10;i++){
+                str+="<tr>";
+                str+="<td>";
+                str+=num+" * "+i+" = "+(num*i);    
+                str+="</td>";        
+                str+="</tr>";    
+            }
+            str+="</table>";
+            //alert(str);    
+            console.log(str);
+            document.getElementById("table").innerHTML=str;
+        }
+        function calPower(x,y)
+        {
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter number : <input type="number" name="base"  />
+        <br/>
+        Enter number : <input type="number" name="pow"  />
+        <input type="button" value="Display Table" 
+         onclick="calPower(base.value,pow.value)" />
+    </form>
+    <div id="table"></div>
+</body>
+</html>

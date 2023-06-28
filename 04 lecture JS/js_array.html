@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        //way of create array
+        var arr = [34,21,67,"Hello",false];
+        //misleading
+        /*var arr1 = new Array(10);
+        var arr2 = new Array(10,20);
+        document.write("<br/> Length of arr : "+arr.length);
+        document.write("<br/> Length of arr1 : "+arr1.length);
+        document.write("<br/> Length of arr2 : "+arr2.length);
+        arr[6]=67.89;
+        document.write("<br/> Length of arr : "+arr.length);
+        document.write("<ul>");
+        for(i=0;i<arr.length;i++)
+            document.write("<li>"+arr[i]+"</li>");
+        document.write("</ul>");    
+        document.write("<br/> ********** </br/>")    
+        document.write("<ul>");
+        for(i in arr)
+            document.write("<li>"+arr[i]+"</li>");
+        document.write("</ul>");
+        document.write("<br/> ********** </br/>")    
+        document.write("<ul>");
+        for(element of arr)
+            document.write("<li>"+element+"</li>");
+        document.write("</ul>");  */
+        
+        var nums = [45,89,78,43,21,89,56];
+        //CONVERTING ARRAY to string
+        document.write("<br/>"+nums.toString())
+        document.write("<br/>"+nums.join("*"))
+
+        //add and remove operation
+        nums.pop();
+        document.write("<br/>"+nums.toString())
+        nums.push(78);
+        document.write("<br/>"+nums.toString())
+
+        nums.shift();
+        document.write("<br/>"+nums.toString())
+        nums.unshift(100);
+        document.write("<br/>"+nums.toString())
+
+        nums.splice(2,1,11,22,33);
+        document.write("<br/>"+nums.toString()) 
+        nums.splice(4,0,10,21);
+        document.write("<br/>"+nums.toString()) 
+        nums.splice(4,2);
+        document.write("<br/>"+nums.toString()) 
+        
+        //searching
+        document.write("<br/> first index of 89 : "+nums.indexOf(89));
+        document.write("<br/> last index of 89 : "+nums.lastIndexOf(89));
+        document.write("<br/> last index of 109 : "+nums.indexOf(109));   
+
+        //part of the array
+        var slice = nums.slice(2,7); //includes index 2,3,4,5,6
+        document.write("<br/>"+slice.toString()) 
+        var slice1 = nums.slice(2);
+        document.write("<br/>"+slice1.toString()) 
+
+        //concatenate
+        var carr = nums.concat(slice);
+        document.write("<br/>"+carr.toString()) 
+        
+        //sorting - natural sorting - ascii values
+        nums.sort()
+        document.write("<br/>"+nums.toString()) 
+
+        //sorting - numeric values
+        nums.sort(function(a,b) {return a-b});
+        document.write("<br/>"+nums.toString()) 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

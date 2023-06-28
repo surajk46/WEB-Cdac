@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <style>
+        /* multiple elements (,) */
+        h1,h3{
+            text-align: center;
+        }
+        /* on the basis of class value (.) */
+        .desc{
+           color: red; 
+        }
+        /* specific class selector (.)*/
+        h3.desc{
+            opacity: 0.2;
+        }
+        /* specifically on id (#)*/
+        #mylink{
+            background-color: palegreen;
+        }
+        [type="text"]{
+            background-color: aqua;
+        }
+        [target="_blank"]
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="letter-spacing: 5px;color:yellow"> Learning CSS </h1>
+    <h3 class="desc"> Types of CSS </h3>
+    <ul>
+        <li> External </li>
+        <li> Internal </li>
+        <li> Inline </li>
+    </ul>
+    <p class="desc"> Helps in separating styling with the content </p>
+    <a id="mylink" href="#" target="_blank"> Click here </a>
+    <img src="Hydrangeas.jpg" width="200" height="200" />
+    <p class="desc"> Cascading should be used in real sense </p>
+    <input type="text" name="uid" />
+
+</body>
+</html>

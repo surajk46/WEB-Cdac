@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function dispTime(){
+            //alert("ready");
+            var cdate = new Date();
+            var hh = cdate.getHours();
+            var mm = cdate.getMinutes();
+            var ss = cdate.getSeconds();
+            if(hh < 10)
+                hh = "0"+hh;
+            if(mm < 10)
+                mm = "0"+mm;
+            if(ss < 10)
+                ss = "0"+ss;       
+            var str = hh+":"+mm+":"+ss;
+            document.getElementById("time").innerHTML = str;
+            //setTimeout(function(){ dispTime() }, 1000 );
+            flag = setTimeout(dispTime, 1000 );
+            //flag as global variable - var keyword not written
+        }
+
+        function stopRefresh()
+        {
+            clearTimeout(flag)
+        } 
+
+    </script>
+    
+</head>
+<body onload="dispTime()">
+    <span id="time" style="float:right"></span>
+    <br/>
+    <hr/>
+    <button onclick="stopRefresh()"> Stop Refresh </button>
+</body>
+</html>

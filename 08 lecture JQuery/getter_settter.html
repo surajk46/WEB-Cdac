@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script src="jquery-3.6.4.min.js" ></script>
+    <script>
+        $(document).ready(function(){ 
+            alert("doc ready");
+            $("button").click(function(){
+                //alert($("h3").text());   //getter
+                //setter - does not understnad markups 
+                //$("h3").text("Functions available in <mark>jquery</mark>")
+
+                //alert($("h3").html());   //getter
+                //setter - markups are applied
+                //$("h3").html("Functions available in <u>jquery</u>")
+
+                //getter - value of attribute
+                //alert($("a").attr("href")) 
+
+                //setter 
+                //$("a").attr("href","animation_effect.html")
+
+                //getter
+                //alert($("[type=text]").val())
+
+                //setter
+                $("[type=text]").val("XXXXXX")
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="d1" style="background-color:yellow;height:300px;border:2px solid black">
+        <h3> <u>Jquery</u> functionality</h3>
+        <p> helps in writing compact code</p>
+        <ul>
+            <li> prepend and append </li>
+            <li> before and after </li>
+            <li> remove and empty </li>
+        </ul>
+        <a href="hiding_effect.html"> More examples </a>
+        <br/>
+        <input type="text" name="uid" value="bakul.joshi" />
+    </div>
+    <button> Info </button>
+
+</body>
+</html>

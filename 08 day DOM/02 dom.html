@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>
+    function dataTable()
+    {
+        var data=document.getElementsByTagName("p");
+        a="";
+        a+="<table border=1>"
+        for(i=0;i<data.length;i++)
+        { 
+            if(data[i].firstChild.nodeValue!=undefined)
+            {
+                a+="<tr>";
+                a+="<td>"+data[i].nodeName+"</td><td>"+data[i].firstChild.nodeValue+"</td>";
+                a+="</tr>"
+            }
+        }
+        a+="</table>";
+        document.getElementById("tab").innerHTML=a;
+    }
+    
+    function changeHeadCol()
+    {
+       head=document.querySelectorAll("h1,h2,h3");
+       for(i=0;i<head.length;i++)
+       head[i].style.color="red";
+    }
+
+
+    function changeBG()
+    {
+        var b=document.getElementsByTagName("body");
+        if(b[0].style.backgroundColor=="rgb(230, 163, 86)")
+            {
+                b[0].style.backgroundColor="rgb(123, 189, 247)";
+                document.getElementById("cButton").style.backgroundColor="rgb(230, 163, 86)";
+            }
+        else
+            {
+                b[0].style.backgroundColor="rgb(230, 163, 86)";
+                document.getElementById("cButton").style.backgroundColor="rgb(123, 189, 247)";
+            }
+    }
+
+    function changeTextColor()
+    {
+        para=document.getElementsByTagName("p");
+        if(para[0].style.color=="")
+        {
+            para=document.getElementsByTagName("p");
+            for(i=0;i<para.length;i++)
+            para[i].style.color="red";
+        }
+        else{
+            para=document.getElementsByTagName("p");
+            for(i=0;i<para.length;i++)
+            para[i].style.color="";
+            document.getElementById("colButton").style.backgroundColor="rgb(123, 189, 247)";
+        }
+        
+    }
+
+    function changeTextBoxColor()
+    {
+     
+        textBox=document.querySelectorAll("[type=text]");
+        for(i=0;i<textBox.length;i++)
+        textBox[i].style.backgroundColor="red";
+    }
+   </script>
+   <style>
+    body{
+        background-color: rgb(230, 163, 86);
+    }
+   /* p{
+    background-color: red;
+   } */
+   </style>
+</head>
+<body>
+    <h1>data Structures</h1>
+    <p id="para1">
+       para 1
+    </p>
+    <p>
+        para 2
+    </p>
+    <p>
+        hey hello hii hii2 njndkejndeki dskjcndkcid
+    </p>
+    <h2> lalala kksjd juiw mmjadc</h2>
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <button onclick="dataTable()">Click for magic</button>
+    <button onclick="changeBG()" id="cButton"> Change</button>
+    <button onclick="changeHeadCol()" id="cButton"> Change heading color</button>
+    <button onclick="changeTextColor()" id="colButton">change text Color</button>
+    <button onclick="changeTextBoxColor()">Change Text Boxes Color</button>
+    <div id="tab"></div>
+</body>
+</html>

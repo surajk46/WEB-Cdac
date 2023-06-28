@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b").click(function(){
+                var url="http://localhost:9001/formCheck?job="+$("#job").val();
+                //http://localhost:9001/formCheck?job=
+                $.get(url,function(data,status){
+                    if(status=='success')
+                    $("#emp").html(data);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="">
+        Enter JOB:
+        <input type="text" name="job" id="job"/>
+        <button type="button" id="b">check</button>
+        <br>
+        <span id="emp"></span>
+    </form>
+</body>
+</html>

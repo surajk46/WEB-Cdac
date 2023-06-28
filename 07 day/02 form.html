@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+    <script>
+        function validate()
+        {
+            emailid=document.getElementById("email").value;
+            var emailPat=/^[\w.-]{1,}@[\w]{1,}.[\w]{1,3}$/;
+            if(!emailPat.test(emailid))
+            {
+                document.getElementById("email").value="";
+                document.getElementById("email").focus();
+                document.getElementById("emailError").innerHTML="Invalid mail";
+                return;
+            }
+            else{
+                document.getElementById("emailError").innerHTML="";
+            }
+            
+            // chbox=document.getElementById("cbox").value;
+            // alert(chbox)
+            // if(chbox=="")
+            // {
+            //     document.getElementById("cboxError").innerHTML="Check any CheckBox";
+            // }
+
+                check=document.querySelectorAll('[type="checkbox"]');
+                flag=false;
+                for(i=0;i<check.length;i++)
+                {
+                    if(check[i].checked)
+                    flag=true;
+                }
+                if(!flag)
+                {
+                    document.getElementById("cboxError").innerHTML="Select anyone";
+                    return;
+                }
+            else
+                document.getElementById("cboxError").innerHTML="";
+
+            opt=document.getElementById("occ").value;
+            if(opt=="")
+            {
+                document.getElementById("occError").innerHTML="Check any CheckBox";
+                return;
+            }
+            else{
+                document.getElementById("occError").innerHTML="";
+            }
+
+            radioB=document.getElementsByName("radio");
+            flag=false;
+            for(i=0;i<radioB.length;i++)
+            {
+                if(radioB[i].checked)
+                flag=true;
+            }
+            if(!flag)
+                {
+                    document.getElementById("radioError").innerHTML="Select anyone";
+                    return;
+                }
+            else
+                document.getElementById("radioError").innerHTML="";
+
+            alert("Looks ok ")
+            document.f1.submit();
+        }
+    </script>
+</head>
+<body>
+<center>
+    <table border="2" style="border-collapse: collapse;">
+        <form action="" name="f1">
+            <th colspan="2">Visitor Information</th>
+            <tr >
+                <td>Email Adress</td>
+                <td><input type="email" name="email" id="email" onblur=""><span id="emailError"></span></td>
+            </tr>
+            <tr>
+                <td>Do You use web for</td>
+                <td><input type="checkbox" id="cbox" name="cbox" value="research">research
+                    <input type="checkbox" id="cbox" name="cbox" value="purchase">purchase 
+                    <span id="cboxError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Occupication</td>
+                <td>
+                    <select name="occ" id="occ">
+                        <option value="">Select one</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="worker">Worker</option>
+                        <option value="engineer">engineer</option>
+                        <option value="doctor">doctor</option>
+                    </select>
+                    <span id="occError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Want us to send you junk email</td>
+                <td>
+                    <input type="radio" name="radio" id="radio" value="Absolutely">Absolutely
+                    <input type="radio" name="radio" id="radio" value="No">NO WAY, man
+                    <span id="radioError"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="button" value="submit" onclick="validate()" ></td>
+                <td><input type="reset" name="reset" id="reset"></td>
+                <td></td>
+            </tr>
+        </form>
+    </table>
+</center>
+</body>
+</html>

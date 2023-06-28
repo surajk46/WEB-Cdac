@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b").click(function(){
+            var num=$("#n").val();
+                var s="<table border=1>";
+                    for(i=1;i<11;i++)
+                    {
+                        s+="<tr><td>"+i+"*"+num+"<td>";
+                        s+="<td>"+i*num+"<td></tr>";
+                           
+                    }
+                    s+="</table>"
+                    $("#res").html(s);
+                    
+            });
+            $("#c").click(function(){
+            });
+        });
+    </script>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Enter a Num:
+        <input type="number" name="n" id="n">
+        <br/>
+        <button id="b">click</button>
+        <button id="c">reset</button>
+        <span id="res"></span>
+    </div>
+</body>
+</html>

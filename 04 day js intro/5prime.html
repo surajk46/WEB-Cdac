@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function prime(n)
+        {
+            shivam=true;
+           for(i=2;i<n;i++)
+           {
+            if(n%2==0)
+            {
+                shivam=false;
+                break;
+            }
+           }
+           if(shivam==true)
+                document.getElementById("res").innerHTML=n+"is PRIME";
+            else
+                document.getElementById("res").innerHTML=n+"is Not Prime"
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <label for="n">Enter a Num to check it is Prime : </label>
+        <input type="number" name="n" id="n">
+        <button type="button" onclick="prime(n.value)">PRIME or NOT</button>
+    </form>
+    <div id="res">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr{
+            height: 55PX;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table border="2" style="border-collapse: collapse;">
+        <form action="">
+            <th colspan="2">Visitor Information</th>
+            <tr >
+                <td>Email Adress</td>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Do You use web for</td>
+                <td><input type="checkbox" name="research">research
+                    <input type="checkbox" name="purchase">purchase
+                </td>
+            </tr>
+            <tr>
+                <td>Occupication</td>
+                <td>
+                    <select name="occ" id="occ">
+                        <option value="farmer">Farmer</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="worker">Worker</option>
+                        <option value="engineer">engineer</option>
+                        <option value="doctor">doctor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Want us to send you junk email</td>
+                <td><input type="radio" name="radio" id="radio">Absolutely
+                    <input type="radio" name="radio" id="radio">NO WAY, man
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="submit" name="submit" id="submit"></td>
+                <td><input type="reset" name="reset" id="reset"></td>
+                <td></td>
+            </tr>
+        </form>
+    </table>
+</center>
+</body>
+</html>

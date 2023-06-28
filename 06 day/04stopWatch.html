@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <script>
+        var m=0;
+        var s=0;
+        var ms=0;
+        var flag;
+        function f1()
+        {
+            document.getElementById("min").innerText=(m<10)?"0"+m:m;
+            document.getElementById("sec").innerText=(s<10)?"0"+s:s;
+            document.getElementById("miliSec").innerText=(ms<10)?"0"+ms:ms;
+        }
+        function stopWatch()
+        {
+            ms++;
+            if(ms>100)
+            {
+                s++;
+                ms=0;
+            }
+            if(s>60)
+            {
+                m++;
+                s=0;
+            }
+            document.getElementById("min").innerText=(m<10)?"0"+m:m;
+            document.getElementById("sec").innerText=(s<10)?"0"+s:s;
+            document.getElementById("miliSec").innerText=(ms<10)?"0"+ms:ms;
+            flag=setTimeout(stopWatch,10);
+        }
+        function stop()
+        {
+            clearTimeout(flag);
+        }
+        function reset()
+        {
+            m=0;
+            s=0;
+            ms=0;
+            document.getElementById("min").innerText=(m<10)?"0"+m:m;
+            document.getElementById("sec").innerText=(s<10)?"0"+s:s;
+            document.getElementById("miliSec").innerText=(ms<10)?"0"+ms:ms;
+            stop();
+        }
+    </script>
+    <style>
+        td,button{
+            text-align: center;
+            padding: 20px 40px ;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body onload="f1()">
+    <div>
+        <table style="background-color:aqua ;margin: auto;">
+            <tr>
+                <td id="min"></td>
+                <td id="sec"></td>
+                <td id="miliSec"></td>
+            </tr>
+            <tr>
+                <td><button id="start" onclick="stopWatch()">start</button></td>
+                <td><button id="stop" onclick="stop()">Stop</button></td>
+                <td><button id="reset" onclick="reset()">Reset</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

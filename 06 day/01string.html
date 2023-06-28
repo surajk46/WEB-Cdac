@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function strleng(a)
+        {
+            document.getElementById("len").innerHTML=a.length;
+        }
+        function upper(a)
+        {
+            document.getElementById("up").innerHTML=a.toUpperCase();
+        }
+        function lower(a)
+        {
+            document.getElementById("low").innerHTML=a.toLowerCase();
+        }
+        function search(a)
+        {
+            document.getElementById("search_w").innerHTML=a.indexOf('w');
+        }
+        function search_last(a)
+        {
+            document.getElementById("search_w_last").innerHTML=a.lastIndexOf('w');
+        }
+        function index_at(a)
+        {
+            document.getElementById("index_at").innerHTML=a.charAt(4);
+        }
+        function get_ascii(a)
+        {
+            document.getElementById("get_ascii").innerHTML=a.charCodeAt(4);
+        }
+        function con(a,b)
+        {
+          /*   alert(a,b)
+            alert(b) */
+            document.getElementById("concat").innerHTML=a.concat(b)
+        }
+        function splt(a)
+        {
+            document.getElementById("split").innerHTML=a.split("");
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label for="str">Enter a string : </label>
+        <input type="text" name="str" id="str">
+        <table>
+            <tr>
+                <td><button onclick="strleng(str.value)">str len</button></td>
+                <td id="len"></td>
+            </tr>
+            <tr>
+                <td><button onclick="upper(str.value)">str upper</button></td>
+                <td id="up"></td>
+            </tr>
+            <tr>
+                <td><button onclick="lower(str.value)">str lower</button></td>
+                <td id="low"></td>
+            </tr>
+            <tr>
+                <td><button onclick="search(str.value)">str search w</button></td>
+                <td id="search_w"></td>
+            </tr>
+            <tr>
+                <td><button onclick="search_last(str.value)">str last index of w</button></td>
+                <td id="search_w_last"></td>
+            </tr>
+            <tr>
+                <td><button onclick="index_at(str.value)">ele at index 4</button></td>
+                <td id="index_at"></td>
+            </tr>
+            <tr>
+                <td><button onclick="get_ascii(str.value)">get_ascii_of_4</button></td>
+                <td id="get_ascii"></td>
+            </tr>
+            <tr>
+                <td><label for="newstr">Enter new str to concat</label></td>
+                <td><input type="text" name="newstr" id="newstr"></td>
+                <td><button onclick="con(str.value,newstr.value)">concat str and newstr</button></td>
+                <td id="concat"></td>
+            </tr>
+            <tr>
+                <td><button onclick="splt(str.value)">get_ascii_of_4</button></td>
+                <td id="split"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change()
+        {
+            var tab=document.getElementsByTagName("tr");
+            a="<div>"
+            for(i=0;i<tab.length;i++)
+               a+="<div>"+tab[i].innerHTML+"</div>";
+            a+="</div>";
+            alert(a)
+            document.getElementById("res").innerHTML=a;
+        }
+    </script>
+</head>
+<body>
+    <table id="tab" border =1 style="border: 1px solid black;border-collapse: collapse;">
+        <tr>
+            <td><h1>cricket</h1></td>
+            <td><img src="browser.jpg" alt=""></td>
+            <td>
+                <p>cricket</p>
+                <p>cricket</p>
+                <p>cricket</p>
+                <p>cricket</p>
+            </td>
+        </tr>
+        <tr>
+            <td><h1>Football</h1></td>
+            <td><img src="desktop.jpg" alt=""></td>
+            <td>
+                <p>football</p>
+                <p>football</p>
+                <p>football</p>
+                <p>football</p>>
+            </td>
+        </tr>
+        <tr>
+            <td><h1>Vollyball</h1></td>
+            <td><img src="mycomputer.jpg" alt=""></td>
+            <td>
+                <p>vollyball</p>
+                <p>vollyball</p>
+                <p>vollyball</p>
+                <p>vollyball</p>
+            </td>
+        </tr>
+    </table>
+    <button onclick="change()">Change</button>
+    <div id="res">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function show_name()
+        {
+            window.open()
+            if( document.getElementById("pwd").type=="text")
+            {
+            document.getElementById("pwd").type="password"
+            document.getElementById("aid").innerHTML="Show Text";
+            }
+            else{
+                document.getElementById("pwd").type="text"
+            document.getElementById("aid").innerHTML="Hide Text";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="pwd">Password:</label>
+        <input type="password" name="pass" id="pwd"/>
+        <a id="aid" href="#" style="text-decoration: none;" onclick="show_name()">Show text</a>
+    </form> 
+</body>
+</html>

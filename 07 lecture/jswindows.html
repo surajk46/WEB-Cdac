@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function getInfo(){
+            alert(window.name);
+            alert(window.location.href);
+            alert("moving to another page ......");
+            //modifying the document which is currently opened
+            window.location.href="dombyid.html";            
+        }
+
+
+        function f1()
+        {
+            mywin = window.open("http://www.google.com","","width=400,height=400")
+        }
+
+        function f2(){
+            mywin.document.write("<h1> Hello from new window </h1>");
+        }
+
+        function f3(){
+            mywin.resizeTo(300,300);
+        }
+
+        function f4(){
+            mywin.focus();
+        }
+
+        function f5(){
+            if(confirm("Do u want to close?"))
+                mywin.close();
+        }
+    </script>
+</head>
+<body onload="getInfo()">
+    <button onclick="f1()">Create New Window</button> <br/>
+    <button onclick="f2()">Write in New Window</button> <br/>
+    <button onclick="f3()">Resize New Window</button> <br/>
+    <button onclick="f4()">Focus New Window</button> <br/>
+    <button onclick="f5()">Close New Window</button> <br/>
+</body>
+</html>

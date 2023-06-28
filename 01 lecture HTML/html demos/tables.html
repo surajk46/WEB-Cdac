@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>HTML tables</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <table border="1" cellspacing="10" cellpadding="20">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <br/>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>Emp data</caption>
+        <thead style="background-color: hwb(60 0% 0%);">
+            <tr>
+                <th> Dept </th>
+                <th> Empid </td>
+                <th> Name </td>
+                <th> Salary </td>
+            </tr>
+        </thead>
+        <tbody style="background-color: blue;">
+            <tr>
+                <td rowspan="2"> Projects </td>
+                <td width="80"> 1001 </td>
+                <td> Bakul </td>
+                <td> 10000 </td>
+            </tr>
+            <tr>
+                <td height="50"> 1003 </td>
+                <td> Vaibhav </td>
+                <td> 12000 </td>
+            </tr>
+        </tbody>
+        <tfoot style="background-color: pink">
+            <tr>
+                <td colspan="3"> Total salary </td>
+                <td> 22000 </td>
+            </tr>
+            <tr>
+                <td> <img src="Koala.jpg" height="80" width="80"  /> </td>
+                <td> <p> dffghfghfghgh </p></td>
+                <td> 
+                    <ul>
+                        <li> rrtyutyu </li>
+                        <li> rrtyutyu </li>
+                        <li> rrtyutyu </li>
+                    </ul>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

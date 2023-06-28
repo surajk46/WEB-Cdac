@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <style>
+        .info{
+            color:blue;
+            background-color: aqua;
+        }
+
+        .content{
+            text-shadow: 2px 2px 2px red;
+        }
+    </style>
+
+
+    <script src="jquery-3.6.4.min.js" ></script>
+    <script>
+        $(document).ready(function(){ 
+            alert("doc ready");
+            /*$("p").mouseover(function() {
+                //$(this).css("color","red");
+                //$(this).css({"color":"blue","background-color":"gray","margin-left":"50px"})
+                //space separated list of classes
+                $(this).addClass("info content")
+            })
+
+            $("p").mouseout(function() {
+                //$(this).removeClass("info content")
+                $(this).toggleClass("info content")
+            })*/
+
+            $("p").hover(function(){ 
+                $(this).addClass("info content")
+            }, function() {
+                $(this).removeClass("info content")
+            })
+
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <p > helps in writing compact code</p>
+    
+    
+
+</body>
+</html>

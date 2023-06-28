@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            uid=document.getElementById("uid").value;
+            if(uid.length<5 || uid.length>15)
+            {
+                document.getElementById("uidError").innerHTML="uid length is between 5 to 15 character <br/> your length is"+uid.length;
+                document.getElementById("uid").value="";
+                document.getElementById("uid").focus();
+                return;
+            }
+            var alfa=false;
+            var small=false;
+            var dot=false;
+            for(i=0;i<uid.length;i++)
+            {
+                ch=uid.charCodeAt(i);
+                if(ch>=65 && ch<=90)
+                    alfa=true;
+                if(ch>=97 && ch<=122)
+                    small=true;
+                if(ch==46)
+                    dot=true;
+            }
+            /* alert(alfa+":"+small+":"+dot) ;*/
+            if(!(alfa && small && dot))
+            {
+                document.getElementById("uidError").innerHTML="Check Chars";
+                document.getElementById("uid").value="";
+                document.getElementById("uid").focus();
+                return;
+            }
+
+            //validate passward
+            pwd=document.getElementById("pwd").value;
+            if(pwd.length<8||pwd.length>15)
+            {
+                document.getElementById("pwdError").innerHTML="Passward type misMatch";
+                document.getElementById("pwd").value="";
+                document.getElementById("pwd").focus();
+                return;
+            }
+            var alfa=false;
+            var small=false;
+            var dot=false;
+            acnt=0;
+            ncnt=0;
+            spcnt=0;
+            for(i=0;i<pwd.length;i++)
+            {
+                ch=pwd.charCodeAt(i);
+                if(ch>=65 && ch<=90)
+                    acnt++;
+                if(ch>=48 && ch<=57)
+                    ncnt++;
+                if(!((ch>=97 && ch<=122)||(ch>=48 && ch<=57)||(ch>=65 && ch<=90)))
+                    spcnt++;
+            }
+            if(!(acnt==1 && ncnt==1 && spcnt==1))
+            {
+                document.getElementById("pwd").value="";
+                document.getElementById("pwd").focus();
+                document.getElementById("pwdError").innerHTML="more Than 1 Albhabet or digit or Special character"
+            }
+            else
+            {
+                alert("valid data. submitting");
+                document.f1.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <table>
+            <tr>
+                <td><label for="uid">UID : </label></td>
+                <td>
+                    <input type="text" placeholder="Enter UID" id="uid" name="uid">
+                    <span id="uidError" style="color: red;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="pwd">PW : </label></td>
+                <td>
+                    <input type="text" placeholder="Enter PWD" id="pwd" name="pwd">
+                    <span id="pwdError" style="color: red;"></span>
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Login" onclick="validate()">
+        <input type="reset" value="clear" id="reset" name="reset">
+    </form>
+</body>
+</html>

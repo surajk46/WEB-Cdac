@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fact(n)
+        {
+            fact=1;
+            for(i=1;i<=n;i++)
+            {
+                fact*=i;
+            }
+            document.getElementById("res").innerHTML=" fact of "+n+" is "+fact;
+            alert(" fact of "+n+" is "+fact);
+        }
+    </script>
+    <style>
+        td{
+            padding: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <div style="width: fit-content; border: 2px solid yellow;">
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="n">Enter a Num : </label></td>
+                    <td> <input type="number" name="n" id="n"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="fact(n.value)">get factorial</button>
+                    </td>
+                </tr>
+            </table> 
+        </form> 
+        <div id="res" style="text-align: center;">
+            
+        </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script src="jquery-3.6.4.min.js" ></script>
+    <script>
+        $(document).ready(function(){ 
+            alert("doc ready");
+            $("#parent").click(function(){
+                //$("li").parent().css("border","2px solid red");
+                //$("li").parents().css("border","2px solid red");
+                $("li").parentsUntil("body").css("border","2px solid red");    
+            })
+            $("#child").click(function(){
+                //$("div").children().prepend("<b>.....</b>");
+                $("div").find("a.c1").append("<b>.....</b>");
+            })
+            $("#sibling").click(function(){
+                //$("p").siblings().hide();
+                $("p").nextAll().hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="d1" style="background-color:yellow;height:300px;border:2px solid black">
+        <h3> Jquery functionality</h3>
+        <p class="c1"> helps in writing compact code</p>
+        <ul>
+            <li> prepend and append </li>
+            <li> before and after </li>
+            <li> remove and empty </li>
+        </ul>
+        <a href="#" class="c1"> More examples </a>
+    </div>
+    <button id="parent">Parent</button>
+    <button id="child">Child</button>
+    <button id="sibling">Sibling</button>
+
+</body>
+</html>

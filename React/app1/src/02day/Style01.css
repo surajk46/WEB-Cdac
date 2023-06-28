@@ -1,0 +1,6 @@
+.myContent{
+    border: 2px solid red;
+    margin: 5px;
+    padding: 25px;
+    text-shadow: 2px 2px 2px blue;
+}

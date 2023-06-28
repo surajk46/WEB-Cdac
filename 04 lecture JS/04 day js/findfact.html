@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        function fact(n)
+        {
+            var fact = 1;
+            while(n > 0)
+            {
+                fact*=n;
+                n--;
+            }
+            //return fact;
+            //document.write("Fact : "+fact);
+            document.getElementById("result").innerHTML="Fact : "+fact
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter number : <input type="number" name="num" />
+        <br/>
+        <input type="button" value="Calculate Fact" 
+        onclick="fact(num.value)"/>
+    </form>
+    <div id="result"></div>
+</body>
+</html>

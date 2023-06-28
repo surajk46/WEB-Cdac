@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b").click(function(){
+                url='http://localhost:9000/greet';
+                id=$("#id").val();
+                
+                $.post(url,{aid:id},function(data,status){
+                    if(status=='success')
+                    {
+                        var act=JSON.parse(data);
+                        a="<h1 style='color:red'>Welcome "+act[0].first_name+" "+act[0].last_name+" ";
+                            var date=new Date();
+                            var h=date.getHours();
+                            if(h>=5 && h<=12)
+                                a+="Good Morning </h1>";
+                            else if(h>12 && h<=16)
+                                a+="Good afternoon </h1>";
+                            else if(h>16 && h<=20)
+                                a+="Good Evening </h1>";
+                            $("#acc").html(a);
+                    }
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    enter id:
+    <input type="number" name="id" id="id"/>
+    <br/>
+    <button type="button" id="b">click</button>
+    <span id="acc"></span>
+</body>
+</html>

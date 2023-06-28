@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{
+            background-color: dimgray;
+            color: #ffffff;
+            text-align: left;
+        }
+        input,select,textarea{
+            background-color: rgba(220, 229, 255, 0.903);
+        }
+    </style>
+</head>
+<body>
+    <b><i><h2 style="color: red;">Express Registration</h2></i></b>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias nostrum corporis, consequuntur fuga voluptates molestias dicta corrupti assumenda fugit eos, nobis voluptas, vel dolorem tempora quis ullam tenetur non recusandae?
+    </p>
+    <center>
+        <table  style="table-layout: auto;">
+            <thead>
+                <th colspan="2">Personal Details</th>
+                <th colspan="2">Address</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="title">Title</label></td>
+                    <td><input type="text" name="title" id="title">
+                        <br/>
+                        <span>(Mr/Mrs/Miss)</span>
+                    </td>
+                    <td><label for="address">Address</label></td>
+                    <td><input type="text" name="address" id="address"></td>
+                </tr>
+                <tr>
+                    <td><label for="fName">First Name</label></td>
+                    <td><input type="text" name="fName" id="fName"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="lName">Last Name</label></td>
+                    <td><input type="text" name="lName" id="lName"></td>
+                    <td><label for="town">Town</label></td>
+                    <td><input type="text" name="town" id="town"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email Address</label></td>
+                    <td><input type="email" name="email" id="email"></td>
+                    <td><label for="state">State</label></td>
+                    <td><input type="text" name="state" id="state"></td>
+                </tr>
+                <tr>
+                    <td><label for="tel">Telephone</label></td>
+                    <td><input type="number" name="tel" id="tel"></td>
+                    <td><label for="country">Country</label></td>
+                    <td><select name="country" id="country">
+                        <option value="">country</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Aland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="BY">Belarus</option>
+                        <option value="IO">British Indian Ocean Territory</option>
+                        <option value="IN">India</option>
+                        <option value="MU">Mauritius</option>
+                        <option value="RU">Russian Federation</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="EH">Western Sahara</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="cell">Cell Phone</label></td>
+                    <td><input type="number" name="cell" id="cell"></td>
+                    <td><label for="postCode"> PostCode</label></td>
+                    <td><input type="number" name="postCode" id="postCode"></td>
+                </tr>
+                <tr>
+                    <td><label for="comment">Comment</label></td>
+                    <td colspan="3"><textarea name="comment" id="comment" cols="60" rows="5"></textarea></td>
+                </tr>
+                
+                    <tr style="border-top:solid 5px green ;">
+                        <td ><label for="feedback">Feedback</label></td>
+                        <td><input type="text" name="feedback" id="feedback"></td>
+                        <td style="border: 5px solid green;"><label for="hearus"></label>Hear us from ?</td>
+                        <td>
+                            <input type="checkbox" name="hearus" id="hearus" value="friends">friends
+                            <input type="checkbox" name="hearus" id="hearus" value="siteOwner">Site Owner
+                            <br/>
+                            <input type="checkbox" name="hearus" id="hearus" value="serchEngine">Search Engine
+                        </td>
+                    </tr>
+                
+                <tr >
+                    <td colspan="4"> Security Details</td> 
+                </tr>
+                <tr>
+                    <td><label for="pwd">Choose Password</label></td>
+                    <td><input type="password" name="pwd" id="pwd"></td>
+                    <td><label for="pwd2">Confirm Password</label></td>
+                    <td><input type="password" name="pwd2" id="pwd2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>

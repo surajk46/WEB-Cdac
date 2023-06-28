@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(){
+            var list=document.getElementsByTagName("li");
+            for(i=0;i<list.length;i++)
+            {
+                var img=document.createElement("img");
+                img.setAttribute("src",list[i].firstChild.textContent+".jpg");
+                list[i].replaceChild(img,list[i].firstChild)
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="a1">desktop</li>
+        <li id="a2">mycomputer</li>
+        <li id="a3">folder</li>
+        <li id="a4">browser</li>
+        
+    </ul>
+    <button id="btn" onclick="change()">Change </button>
+</body>
+</html>

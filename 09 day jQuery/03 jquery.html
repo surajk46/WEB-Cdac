@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".acc").click(function(){
+                $(this).next().slideToggle();
+            });
+        });
+    </script>
+    <style>
+        #spec{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+           <div >
+                <td><li>Nokia</li></td>
+                <td><a href="#" class="acc" id="lin">View Specification</a></td>
+                <div id="spec">
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                </div>
+           </div>
+           <div>
+                <td><li>sam</li></td>
+                <td><a href="#" class="acc"  id="lin">View Specification</a></td>
+                <div id="spec">
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                </div>
+           </div>
+           <div >
+                <td><li>app</li></td>
+                <td><a href="#" class="acc"  id="lin">View Specification</a></td>
+                <div id="spec">
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
+                </div>
+           </div>
+</body>
+</html>

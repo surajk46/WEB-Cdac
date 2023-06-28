@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $(this).parent().prev().slideDown();
+            });
+            $("#m").click(function(){
+                $(this).slideUp();
+            });
+        });
+    </script>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <div id="m" style="background-color: brown; width: 80%;height: 1200px;display: none;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatem voluptatum ducimus ratione reprehenderit fugit quaerat dignissimos facere at neque laudantium soluta nesciunt cumque repellendus non expedita dolor, sit repudiandae officiis? Eum nobis doloribus labore officiis, esse fuga tenetur magnam accusantium suscipit? Voluptatum velit voluptate provident aperiam repellat maiores maxime consequatur ex placeat, error obcaecati reiciendis quas voluptates enim odit?</p>
+        </div>
+       <center> <button id="slideDown">slide down</button></center>
+    </div>
+</body>
+</html>

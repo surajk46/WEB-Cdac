@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).mouseover(function(){
+                $("img").animate({width:"+=10px" ,height:"+=10px"})
+            });
+        });
+    </script>
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <marquee direction="right"><img src="wonderWoman.jpg" alt=""></marquee>
+    </div>
+</body>
+</html>

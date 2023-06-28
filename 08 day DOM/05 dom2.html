@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function win(w,h,x,y)
+        {
+            if(document.getElementById("show").firstChild.textContent=="Show Window")
+                document.getElementById("show").firstChild.textContent="Hide Window"
+            else
+                document.getElementById("show").firstChild.textContent="Show Window"
+
+            win=window.open("","","width=400,height=400");
+            win.resizeTo(w,h);
+           
+
+        }
+        function f1()
+        {
+            win.close();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label for="width">Enter width of window</label>
+        <input type="number" name="width" id="width">
+        <br/>
+        <label for="height">Enter height of window</label>
+        <input type="number" name="height" id="height">
+        <br/>
+      
+        <label for="x">Enter x coordinate</label>
+        <input type="number" name="x" id="x">
+        <label for="y">Enter y coordinate</label>
+        <input type="number" name="y" id="y">
+
+        <button id="show" onclick="win(width.value,height.value,x.value,y.value)">Show Window</button>
+        <button onclick="f1()">close</button>
+    </div>
+</body>
+</html>

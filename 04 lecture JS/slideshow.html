@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        imgarr=["Desert.jpeg","Hydrangeas.jpg","Jellyfish.jpg","Jellyfish.jpg","Lighthouse.jpeg","Penguins.jpeg"]
+        index = 0;
+        function nextImg(){
+            index++;
+            if(index == imgarr.length)
+                index = -1;
+            document.getElementById("img1").src=imgarr[index];
+        }
+
+        function previousImg(){
+            index--;
+            if(index == -1)
+                index = imgarr.length-1;
+            document.getElementById("img1").src=imgarr[index];
+        }
+    </script>
+</head>
+<body>
+    <img src="Desert.jpeg" width="200" height="200" id="img1" />
+    <br/>
+    <button onclick="nextImg()">Next</button>
+    <button onclick="previousImg()">Previos</button>
+</body>
+</html>

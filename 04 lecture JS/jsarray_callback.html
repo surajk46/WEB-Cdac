@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        var nums = [4,6,8,2,7,5];
+        function myiter(v,i,arr){
+            document.write("<p>"+v+" present at "+i+" for array length "+arr.length);
+        }
+        nums.forEach(myiter); //myiter - callback function - no explicit call
+
+        document.write("<ul>");
+        nums.forEach(function(v,i){document.write("<li>"+v+" present at "+i+"</li>")})
+        document.write("</ul>");
+
+        document.write("<table border=1><tr>");
+        nums.forEach((v,i)=>{document.write("<td>"+v+" present at "+i+"</td>")})
+        document.write("</tr></table>");
+
+        //map - returns array - converted elements
+        //var squares = nums.map(v=>v*v);
+        var squares = nums.map(v=> {return v*v})
+        document.write("<br/>"+squares.toString()); 
+
+        var sum = nums.reduce((v,i)=>v+i , 50);
+        document.write("<br/> sum : "+sum); 
+        
+        var sum1 = nums.reduce(function(v,i){return v+i},50);
+        document.write("<br/> sum1 : "+sum1); 
+        
+        var filterarr = nums.filter(function(v){return v%2 == 0})
+        //var filterarr = nums.filter(v => v%2 == 0);
+        document.write("<br/>"+filterarr.toString()); 
+
+        var alldivby3 = nums.every(v => v%3== 0);
+        document.write("<br/> all div by 3 : "+alldivby3);
+        
+        var somedivby3 = nums.some(v => v%3== 0);
+        document.write("<br/> some div by 3 : "+somedivby3);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

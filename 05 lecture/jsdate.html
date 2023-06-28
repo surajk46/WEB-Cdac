@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script>
+        var cdate = new Date();
+        document.write("<br/>Curent date : "+cdate);
+
+        var dt1 = new Date(86400000*23);
+        document.write("<br/>Date 1 : "+dt1);
+
+        //accept date from user date field
+        var dt2 = new Date("23-09-2023");  //yyy-mm-dd
+        document.write("<br/>Date 2 : "+dt2);
+
+        var dt3 = new Date(2000,1,23,14,30,50);
+        document.write("<br/>Date 2 : "+dt3);
+
+        //date functionality
+        var wdays = ["Sunday","Monday"];
+        document.write("<br/>Weekday : "+ wdays[cdate.getDay()]);
+        document.write("<br/>Month : "+ cdate.getMonth());
+        document.write("<br/>Minutes : "+ cdate.getMinutes());
+
+        cdate.setFullYear(2021,3,23);
+        document.write("<br/>Curent date : "+cdate);
+
+        if(cdate > dt3)
+        {
+            document.write("<br/>cdate is greater")
+        }
+        else
+        {
+            document.write("<br/>cdate is smaller")
+        }
+
+        function calAge(dt)
+        {
+            //alert(dt.getFullYear());
+            var byear = new Date(dt).getFullYear();
+            var cyear = new Date().getFullYear();
+            alert("Age : "+(cyear-byear));
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        Enter bdate : <input type="date" name="bdate" />
+        <input type="button" value="Cal Age" onclick="calAge(bdate.value)"/>
+    </form>
+</body>
+</html>

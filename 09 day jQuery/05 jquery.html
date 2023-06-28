@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $(this).parent().parent().next().slideToggle();
+            });
+        });
+    </script>
+    <style>
+        tr#frow{
+            background-color: antiquewhite;
+        }
+        table{
+            width: 35%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr id="frow">
+                <td>
+                    <p style="float: left;">Lorem ipsum dolor sit amet.</p>
+                    <button id="ans" style="margin:20px 20px ; float: left;">click</button>
+                </td>
+            <tr id="hide" style="display: none;" >
+                    <td>
+                       <p> 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi officia officiis assumenda error! Voluptatum dolor quibusdam magnam pariatur, repellat alias quod quos adipisci officia. Qui?
+                        </p>
+                    </td>
+                </tr>
+            </tr>
+            <tr id="frow">
+                <td>
+                    <p style="float: left;">Lorem ipsum dolor sit amet.</p>
+                    <button id="ans" style="margin:20px 20px ; float: left;">click</button>
+                </td>
+                <tr id="hide" style="display: none;" >
+                    <td>
+                       <p> 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi officia officiis assumenda error! Voluptatum dolor quibusdam magnam pariatur, repellat alias quod quos adipisci officia. Qui?
+                        </p>
+                    </td>
+                </tr>
+            </tr>
+            <tr id="frow">
+                <td>
+                    <p style="float: left;">Lorem ipsum dolor sit amet.</p>
+                    <button id="ans" style="margin:20px 20px ; float: left;">click</button>
+                </td>
+                <tr id="hide" style="display: none;" >
+                    <td>
+                       <p> 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi officia officiis assumenda error! Voluptatum dolor quibusdam magnam pariatur, repellat alias quod quos adipisci officia. Qui?
+                        </p>
+                    </td>
+                </tr>
+            </tr>
+            <tr id="frow">
+                <td>
+                    <p style="float: left;">Lorem ipsum dolor sit amet.</p>
+                    <button id="ans" style="margin:20px 20px ; float: left;">click</button>
+                </td>
+                <tr id="hide" style="display: none;" >
+                    <td>
+                       <p> 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi officia officiis assumenda error! Voluptatum dolor quibusdam magnam pariatur, repellat alias quod quos adipisci officia. Qui?
+                        </p>
+                    </td>
+                </tr>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function digiclock()
+        {
+            var date=new Date();
+            var hh=date.getHours();
+            var mm=date.getMinutes();
+            var ss=date.getSeconds();
+
+            if(hh<9)
+                hh="0"+hh;
+            if(mm<9)
+                mm="0"+mm;
+            if(ss<9)
+                ss="0"+ss;
+            document.getElementById("digi").innerHTML=hh+":"+mm+":"+ss;
+          /*   var flag=setTimeout(digiclock,1000); */
+          setInterval(digiclock,1000);
+        }
+    </script>
+</head>
+<body onload="digiclock()">
+    <div>
+        <span id="digi"></span>
+        <br/>
+        <hr/>
+    </div>
+</body>
+</html>

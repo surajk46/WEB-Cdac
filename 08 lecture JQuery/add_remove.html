@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <script src="jquery-3.6.4.min.js" ></script>
+    <script>
+        $(document).ready(function(){ 
+            alert("doc ready");
+            $("#remove").click(function(){
+                $("div").remove();
+            })
+
+            $("#empty").click(function(){
+                $("div").empty();
+            })
+
+            $("#prepend").click(function(){
+                $("div").prepend("<h1> Dealing with HTML DOM </h1>");
+            })
+
+            $("#append").click(function(){
+                $("div").append("<p> Contact us for tutorial </p>");
+            })
+
+            $("#before").click(function(){
+                $("div").before("<p>Extension of JS</p>");
+            })
+
+            $("#after").click(function(){
+                $("div").after("<p> Further learning is easy </p>");
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="d1" style="background-color:yellow;height:300px;border:2px solid black">
+        <h3> Jquery functionality</h3>
+        <p> helps in writing compact code</p>
+        <ul>
+            <li> prepend and append </li>
+            <li> before and after </li>
+            <li> remove and empty </li>
+        </ul>
+        <a href="#"> More examples </a>
+    </div>
+    <button id="remove"> remove </button> <br/>
+    <button id="empty"> empty </button> <br/>
+    <button id="prepend"> prepend </button> <br/>
+    <button id="append"> append </button> <br/>
+    <button id="before"> before </button> <br/>
+    <button id="after"> after </button> <br/>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome</title>
+    <script>
+        function pali(n)
+        {
+            n2=n;
+            rev=0;
+            while(n>0)
+            {
+                rem=n%10;
+                rev=rev*10+rem;
+                n=parseInt(n/10);
+            }
+            if(rev==n2)
+                document.getElementById("res").innerText=n2+" is Palindrome";
+            else
+                document.getElementById("res").innerText=n2+" is NOT Palindrome";
+        }
+    </script>
+    <style>
+        table{
+            background-color: #fba1a1;
+        }
+        td>button{
+            background-color: blue;
+        }
+        #box{
+            background-color: #fba1a1;
+            width: fit-content;
+            padding: 25px;
+        }
+        #res{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form action="">
+            <table>
+                <tr>
+                    <td><label for="n">Enter a Number : </label></td>
+                    <td><input type="number" name="n" id="n"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><button type="button" onclick="pali(n.value)">check</button></td>
+                </tr>
+            </table>
+        </form>
+        <div id="res">
+
+        </div>
+    </div>
+</body>
+</html>
